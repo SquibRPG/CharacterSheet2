@@ -1,0 +1,120 @@
+# Trainer Sheet (Pokémon-inspired) — Local-First Character Sheet UI
+
+A **local-first**, player-facing **reference UI** for a Pokémon-inspired tabletop RPG character sheet.  
+This is **not** a game engine and does not run battles, rolls, or automation logic.
+
+## What it does
+- Trainer info
+- 4 Pokémon slots
+- Active Pokémon preview panel
+- Roles + role progression tracking
+- Nest / Great / Signature moves + preview
+- Abilities
+- Trainer Actions + usage counters
+- Local save/restore via `localStorage`
+- Export/Import a single JSON file (portable save)
+
+## Local-first by design
+All edits are stored in your browser (`localStorage`) on your device.  
+Export/Import lets you move your sheet between devices or share a save file.
+
+---
+
+## Quick start (local)
+### Option A: VSCode Live Server (recommended)
+1. Open the folder in VSCode
+2. Install **Live Server**
+3. Right-click `CharacterSheet.html` → **Open with Live Server**
+
+### Option B: Any static server
+Serve this folder with a simple static server of your choice.
+
+> Avoid opening the HTML via `file://` directly; some browsers restrict JSON loading/fetching.
+
+---
+
+## GitHub Pages deployment (optional)
+This project is static and can be hosted on GitHub Pages.
+
+Recommended:
+- Rename `CharacterSheet.html` → `index.html` so Pages loads automatically at the site root.
+
+Steps:
+1. Push the repo to GitHub
+2. Go to **Settings → Pages**
+3. Source: **Deploy from a branch**
+4. Branch: `main` (or `master`), folder: `/root`
+5. Save and use the provided Pages URL
+
+---
+
+## Project structure
+- `CharacterSheet.html` — UI structure
+- `styles.css` — presentation/styling
+- `script.js` — app logic/state
+- `pokemon.json` / `moves.json` / `abilities.json` / `roles.json` — data-only databases
+
+---
+
+## Data & IP / Takedown Risk Notes (PLEASE READ)
+This project is intended as a **fan-made tabletop character sheet UI**. To reduce takedown risk:
+
+### Non-affiliation
+This project is **not affiliated with, endorsed by, or sponsored by** Nintendo, Game Freak, The Pokémon Company, or any related entities.
+
+### Trademarks
+“Pokémon” and related marks are trademarks of their respective owners.  
+Use of the term “Pokémon” here is **referential only**.
+
+### Content policy (recommended)
+To minimize risk, this repo should **avoid including copyrighted text** or proprietary game content (e.g., full move descriptions, ability descriptions, Pokédex entries, official art, logos, sprites, or scans).
+
+**Best practice:** ship one of these options:
+- **Option 1 (lowest risk):** empty JSON templates + user fills their own data
+- **Option 2:** a small, original “demo dataset” with **original names/descriptions** (no official text)
+- **Option 3 (higher risk):** only names/IDs with no official descriptions/art, and require users to add any descriptive text themselves
+
+If you keep official names in datasets, that is generally lower risk than distributing full official text/art, but it can still draw attention depending on scope and usage.
+
+### No official assets
+Do **not** include:
+- official artwork, sprites, logos
+- official move/ability descriptions
+- official Pokédex text
+- copyrighted rulebook text
+
+### No commercial intent
+This project is intended for **personal tabletop use**. Do not sell it, bundle it with paid content, or gate features behind payment.
+
+---
+
+## Export / Import
+- **Export:** downloads a single JSON file containing your current sheet state.
+- **Import:** loads that file back into the sheet.
+
+Tip: exports can be shared between devices, but they may contain personal notes.
+
+---
+
+## Security / Privacy
+- Data is stored locally in your browser.
+- Nothing is sent to a server (unless you host it yourself somewhere and modify it).
+- Treat exported JSON like a save file—don’t share it if it contains private notes.
+
+---
+
+## License
+**Code:** choose a permissive license (MIT recommended).  
+**Data:** ensure any included dataset is original or licensed for redistribution.
+
+> If you intend to distribute large datasets that mirror official content, consider removing them from the repo and providing templates instead.
+
+---
+
+## DMCA / Takedown contact
+If you believe any content in this repository infringes your rights, please open an issue with:
+- the specific file(s)
+- the specific content
+- the basis for the request
+
+Maintainers will review and remove/replace disputed content where appropriate.
